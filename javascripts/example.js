@@ -4,6 +4,7 @@ $(function() {
     }
 
     var changeScrubber = function(top) {
+        alert(top);
         var items = $('.item');
         var itemsTop = []
         for (var i = 0; i < items.length; ++i) {
