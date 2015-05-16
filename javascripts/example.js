@@ -1,8 +1,6 @@
 $(function() {
     var resetTime = function() {
-        $("a[class^=month").css("color", "#888");
-        $("a[class^=year").css("color", "#888");
-        $("a[class^=month").css("display", "none");
+        alert("reset");
     }
 
     var changeScrubber = function(top) {
