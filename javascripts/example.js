@@ -1,10 +1,11 @@
 $(function() {
     var resetTime = function() {
-        alert("reset");
+        $("a[class^='month']").css("color", "#888");
+        $("a[class^='year']").css("color", "#888");
+        $("a[class^='month']").css("display", "none");
     }
 
     var changeScrubber = function(top) {
-        alert(top);
         var items = $('.item');
         var itemsTop = []
         for (var i = 0; i < items.length; ++i) {
