@@ -1,7 +1,7 @@
 $(function() {
         $("a[class^='year_2015'").css("color", "rgba(17,209,255, 0.8)");
         $("a[class^='month_2015_05'").css("color", "rgba(17,209,255, 0.8)");
-
+        alert("1");
     var resetTime = function() {
         $("a[class^='month'").css("color", "#888");
         $("a[class^='year'").css("color", "#888");
@@ -40,6 +40,7 @@ $(function() {
     } 
 
     $(window).scroll(function() {
+        alert("2");
         var top = $(window).scrollTop();
         var windowWidth = $(window).width();
         changeScrubber(top);
@@ -49,10 +50,12 @@ $(function() {
             var tmp = 40;
         }
         if (top > tmp) {
+            alert("3");
             $(".scrubber").css("position", "fixed")
             var containerWidth = $(".myContainer").width();
             var width = (windowWidth-containerWidth)/2 + "px";
             $(".scrubber").css("left", width);
+            alert("4");
         } else {
             $(".scrubber").css("position", '')
             $(".scrubber").css("left", "");
@@ -60,6 +63,7 @@ $(function() {
     })
     //时序表点击展开高亮
     $(document).on('click', 'a', function() {
+        alert("6");
         var nameofThis = $(this).attr('class');
         if (nameofThis.indexOf("month") >= 0) {
             $("a[class^='month']").css("color", "#888");
