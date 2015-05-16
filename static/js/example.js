@@ -1,13 +1,37 @@
 $(function() {
+        $("a[class^='year_2015'").css("color", "rgba(17,209,255, 0.8)");
+        $("a[class^='month_2015_05'").css("color", "rgba(17,209,255, 0.8)");
+
     var resetTime = function() {
         $("a[class^='month'").css("color", "#888");
         $("a[class^='year'").css("color", "#888");
         $("a[class^='month'").css("display", "none");
     }
 
-    var expandTime = function(months) {
+    var changeScrubber = function(top) {
+        var items = $('.item');
+        var itemsTop = []
+        for (var i = 0; i < items.length; ++i) {
+            itemsTop.push($(items[i]).offset().top);
+        }
+        for (var i = 1; i < items.length; ++i) {
+            if (top > itemsTop[i - 1] && top < itemsTop[i]) {
+                var date = $(items[i]).find('.englishDate').attr('class').substr(29);
+                var year = date.substr(0, 4);
+                var month = date.substr(5,2);
+                var months = "month_" + year;
+                resetTime();
+                expandTime(months, month);
+                $("a[class$='"+ year +"'").css("color", "rgba(17,209,255, 0.8)");
+                $("a[class$='"+ month +"'").css("color", "rgba(17,209,255, 0.8)");
+                break;
+            }
+        }
+    }
+
+    var expandTime = function(months, month) {
         $("a[class^='"+months+"']").css("display", "block");
-        $("a[class^='"+months+"']").eq(0).css("color", "rgba(17,209,255, 0.8)");
+        $("a[class$='"+month+"']").css("color", "rgba(17,209,255, 0.8)");
     }
 
     var jump = function(date) {
@@ -18,6 +42,7 @@ $(function() {
     $(window).scroll(function() {
         var top = $(window).scrollTop();
         var windowWidth = $(window).width();
+        changeScrubber(top);
         if (windowWidth > 640) {
             var tmp = 150;
         } else {
@@ -51,7 +76,8 @@ $(function() {
             var firstMonth = $("a[class^='"+months+"']").eq(0).attr("class")
             var date = firstMonth.substr(6);
             date = "content_" +date;
-            expandTime(months);
+            var month = firstMonth.substr(11, 2)
+            expandTime(months, month);
             if (firstMonth != undefined) {
                 jump(date);
             }
