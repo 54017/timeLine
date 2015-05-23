@@ -1,5 +1,6 @@
 body {
-    background: url("../images/background.jpeg") fixed;
+    background: url("../images/background.jpg") fixed no-repeat;
+    background-position: center;
     margin: 0;
     padding-top: 40px;
 }
@@ -51,7 +52,6 @@ body {
 }
 
 .item {
-    min-height: 400px;
     position: relative;
     background-color: white;
     width: 35%;
@@ -59,7 +59,40 @@ body {
     border-radius: 5px;
 }
 
+.dateOfEvent a {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 2px;
+}
+
+.yearA, .monthA, .dayA {
+    margin-left: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+span.dateSelected {
+    color: white;
+}
+
+
+.dateOfEvent {
+    background-color: rgba(17,209,255, 0.8);
+    margin-right: 350px;
+    position: relative;
+    width: 397px;
+}
+
+.addItem a {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .item.leftItem {
+    min-height: 400px;
     float: left;
     margin-left: 20%;
 }
@@ -73,8 +106,124 @@ body {
 }
 
 .item.rightItem {
+    min-height: 400px;
     float: right;
     margin-left: 10%;
+}
+
+.addItem {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.addText {
+    float: right;
+    height: 100px;
+    width: 80%;
+    margin-right: 2%;
+    border: 2px solid #888;
+    overflow-y: auto;
+}
+
+.addFile {
+    float: left;
+    width: 90px;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 2px dashed gray;
+    text-align: center;
+}
+
+.submitBt button {
+    float: right;
+    margin:5px 20px 100px 0;
+}
+
+.submitBt {
+    display: inline;
+}
+
+.yourself {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2px;
+}
+
+.addPeople {
+    float: left;
+    clear: both;
+    margin-top: 5px;
+    margin-left: 1%;
+}
+
+.yearList span, .monthList span, .dayList span {
+    font-size: 10px;
+    display: block;
+}
+
+.yearList span:hover, .monthList span:hover, .dayList span:hover {
+    background-color: rgba(17,209,255, 0.8);
+}
+
+.yearList, .monthList, .dayList {
+    position: absolute;
+    width: 85px;
+    overflow-y: auto;
+    height: 100px;
+    background-color: white;
+    text-align: left;
+    border: 1px solid gray;
+    border-top-width: 0px;
+    z-index: 999;
+}
+
+.yearList {
+}
+
+.monthList {
+}
+
+.dayList {
+}
+
+@media screen and (max-width:960px) {
+.addText {
+    width: 90%;
+    margin: auto;
+    height: 95px;
+    float: none;
+}
+
+.item.topItem {
+    height: 220px;
+}
+
+.addFile {
+    border-width: 0px;
+}
+
+.addItem {
+    margin-top: 7px;
+}
+
+.addItem a {
+    display:  inline;
+}
+
+.addFile {
+    clear: both;
+    width: 100%;
+}
+
+}
+
+.glyphicon-film {
+    border-bottom: 2px dashed gray;
+}
+
+.glyphicon-plus-sign {
+    border: 2px dashed gray;
+    padding: 6px;
 }
 
 .triangle {
@@ -88,13 +237,28 @@ body {
     top:15px;
 }
 
+.topItem .triangle.bigTriangle {
+    border-color: transparent white transparent transparent;
+    border-width: 17px;
+    left: 364px;
+    top: 1px;
+}
+
+.topItem .triangle {
+    border-color: transparent rgba(17,209,255, 0.8) transparent transparent;
+    left: -20px;
+    top:10px;
+}
+
 .innerDot {
+    position: absolute;
     width: 6px;
     height: 6px;
     border-radius: 3px;
     background-color: rgba(119, 12, 255, 0.8);
     margin: auto;
     margin-top: 2px;
+    left: 2px;
 }
 
 .outerDot {
@@ -106,13 +270,13 @@ body {
 }
 
 .leftItem.outerDot {
-    top: 18px;
-    left: -16%;
+    top: 19px;
+    left: -15.5%;
 }
 
 .rightItem.outerDot {
-    top: 18px;
-    left: -144.7%;
+    top: 19px;
+    left: -144.3%;
 }
 
 .textPart {
@@ -121,7 +285,7 @@ body {
 
 .chineseDate {
     float: left;
-    width: 15%;
+    width: 13%;
     min-height: 30px;
     background-color: rgba(17,209,255, 0.8);
     text-align: center;
@@ -134,7 +298,7 @@ body {
 .englishDate {
     width: 80%;
     float: right;
-    font-size: 1.7rem;
+    font-size: 2.5rem;
     text-align: left;
     color: #888;
 }
@@ -143,9 +307,32 @@ body {
     overflow: hidden;
 }
 
+
+.glyphicon-heart {
+    color: rgba(255, 65,44, 1);
+}
+
+.glyphicon-globe {
+    color: rgba(7,127,255, 1);
+}
+
+.glyphicon-user {
+    color: rgba(255,131,59,1);
+}
+
+.person, .spot, .helper {
+    float: left;
+    margin: 10px 20px 1px 2px;
+}
+
 .description {
     color: #888;
     margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.event {
+    overflow:  hidden;
 }
 
 img {
@@ -154,8 +341,13 @@ img {
 }
 
 .extra {
+    width: 90%;
+    margin: auto;
     overflow: hidden;
-    margin-top: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid gray;
+    margin-bottom: 5px;
 }
 
 .zan, .comment {
@@ -168,13 +360,41 @@ span {
     color: gray;
 }
 
+.item.topItem {
+    float: left;
+    margin-left: 20%;
+    margin-top: 40px;
+    width: 80%;
+    height: 200px;
+}
 
-@media screen and (max-width:640px){
+.topItem.outerDot {
+    position: absolute;
+    top: 19px;
+    left: -6.8%;
+}
+
+div.form-inline {
+    width: 60%;
+    background-color: blue;
+}
+
+.timeline.year_select {
+
+}
+
+ .glyphicon-triangle-bottom {
+    font-size: 15px;
+    color: rgba(0, 129, 255, 1);
+ }
+
+@media screen and (max-width:640px) {
 
 .item.leftItem {
     clear: both;
     margin-left: 20%;
 }
+
 
 .item.rightItem {
     clear: both;
