@@ -433,4 +433,12 @@ div.form-inline {
     width: 90%;
 }
 
+.dateOfEvent a {
+    font-size: 18px;
+}
+
+.yearA, .monthA, .dayA {
+    margin-left: 2px;
+}
+
 }
