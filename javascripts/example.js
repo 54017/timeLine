@@ -1,7 +1,7 @@
 $(function() {
-        $("a[class^='year_2015'").css("color", "rgba(17,209,255, 0.8)");
-        $("a[class^='month_2015_05'").css("color", "rgba(17,209,255, 0.8)");
-        $("div[class$='List'").hide();
+        $("a[class^='year_2015']").css("color", "rgba(17,209,255, 0.8)");
+        $("a[class^='month_2015_05']").css("color", "rgba(17,209,255, 0.8)");
+        $("div[class$='List']").hide();
 
     var resetTime = function() {
         $("a[class^='month']").css("color", "#888");
