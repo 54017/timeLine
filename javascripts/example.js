@@ -23,8 +23,8 @@ $(function() {
                 var months = "month_" + year;
                 resetTime();
                 expandTime(months, month);
-                $("a[class$='"+ year +"'").css("color", "rgba(17,209,255, 0.8)");
-                $("a[class$='"+ month +"'").css("color", "rgba(17,209,255, 0.8)");
+                $("a[class$='"+ year +"']").css("color", "rgba(17,209,255, 0.8)");
+                $("a[class$='"+ month +"']").css("color", "rgba(17,209,255, 0.8)");
                 break;
             }
         }
@@ -86,7 +86,7 @@ $(function() {
     })
 
     $(document).on('click', "div[class$='A']", function() {
-        $("div[class$='List'").hide();
+        $("div[class$='List']").hide();
         $(this).find("div[class$='List']").show();
     })
 
