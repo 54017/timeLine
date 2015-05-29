@@ -245,7 +245,7 @@ span.dateSelected {
 }
 
 .topItem .triangle {
-    border-color: transparent rgba(17,209,255, 0.8) transparent transparent;
+    border-color: transparent rgba(17,209,255, 1) transparent transparent;
     left: -20px;
     top:10px;
 }
@@ -370,7 +370,7 @@ span {
 
 .topItem.outerDot {
     position: absolute;
-    top: 19px;
+    top: 15px;
     left: -6.8%;
 }
 
@@ -406,11 +406,17 @@ div.form-inline {
 }
 
 .leftItem.outerDot {
-    left: -7.6%;
+    left: -7.5%;
 }
 
 .rightItem.outerDot {
-    left: -7.6%;
+    left: -7.5%;
+}
+
+.topItem.outerDot {
+    position: absolute;
+    top: 8px;
+    left: -7%;
 }
 
 .item.rightItem.firstItem {
@@ -439,6 +445,12 @@ div.form-inline {
 
 .yearA, .monthA, .dayA {
     margin-left: 2px;
+}
+
+.topItem .triangle {
+    border-color: transparent rgba(17,209,255, 1) transparent transparent;
+    left: -20px;
+    top:3px;
 }
 
 }

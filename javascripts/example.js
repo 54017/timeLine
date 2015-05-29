@@ -1,7 +1,12 @@
-$(function() {
-        $("a[class^='year_2015']").css("color", "rgba(17,209,255, 0.8)");
-        $("a[class^='month_2015_05']").css("color", "rgba(17,209,255, 0.8)");
-        $("div[class$='List']").hide();
+;(function(window, $, undefined) {
+        $(function() {
+            $("a[class^='year_2015']").css("color", "rgba(17,209,255, 0.8)");
+            $("a[class^='month_2015_05']").css("color", "rgba(17,209,255, 0.8)");
+            $("div[class$='List']").hide();
+            $(window).click(function() {
+                $("div[class$='List']").hide();
+            })
+        })
 
     var resetTime = function() {
         $("a[class^='month']").css("color", "#888");
@@ -85,9 +90,10 @@ $(function() {
         }
     })
 
-    $(document).on('click', "div[class$='A']", function() {
+    $(document).on('click', "div[class$='A']", function(event) {
         $("div[class$='List']").hide();
         $(this).find("div[class$='List']").show();
+        event.stopPropagation();
     })
 
     $(document).on('click', "div[class$='List'] span", function(event) {
@@ -96,4 +102,4 @@ $(function() {
         $("div[class$='List']").hide();
         event.stopPropagation();
     })
-});
+})(window, jQuery);
